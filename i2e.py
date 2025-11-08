@@ -24,11 +24,10 @@ class I2E(torch.nn.Module):
         self.shuffle = np.array(shuffle)
         self.weight = torch.nn.Parameter(torch.zeros((8, 1, 3, 3)))
         self.weight.requires_grad_(False)
-        self.set_weight()
         
     def set_weight(self):
         torch.nn.init.constant_(self.weight, 0.)
-        selected_directions = [selectable_directions[i][0] for i in range(8)]
+        selected_directions = [random.choice(selectable_directions[i]) for i in range(8)] if self.training else [selectable_directions[i][0] for i in range(8)]
         for i, directions in enumerate(selected_directions):
             x0, y0 = (directions[0]-1) // 3, (directions[0]-1) % 3
             x1, y1 = (directions[1]-1) // 3, (directions[1]-1) % 3
@@ -37,7 +36,7 @@ class I2E(torch.nn.Module):
         self.weight.data = self.weight.data[self.shuffle]
 
     def forward(self, img):                                                 # [B, 3, H, W]
-        # self.set_weight()
+        self.set_weight()
         img_v, _ = torch.max(img, 1, keepdim=True)                          # [B, 1, H, W]
         img_v = F.pad(img_v, (1, 1, 1, 1), mode=self.padding_mode)          # [B, 1, H+2, W+2]
         img_range = (torch.max(torch.max(img_v, 3, True)[0], 2, True)[0] - torch.min(torch.min(img_v, 3, True)[0], 2, True)[0]).unsqueeze(0)  # [1, B, 1, 1, 1]
