@@ -1,0 +1,5 @@
+conda activate pytorch220 ; clear
+
+python train.py -bz 128 -dp '/ssd/Datasets/CIFAR10/' --dataset 'cifar10' -n 'CIFAR10' -cn 10 -e 256 --lr 0.1 --lr_min 5e-5 -wd 2e-4 --label_smooth 0.1 --model 'resnet18' --ratio 0.07 --shuffle 4 -p 30
+python train.py -bz 128 -dp '/ssd/Datasets/CIFAR100/' --dataset 'cifar100' -n 'CIFAR100' -cn 100 -e 256 --lr 0.1 --lr_min 5e-5 -wd 2e-4 --label_smooth 0.1 --model 'resnet18' --ratio 0.07 --shuffle 4 -p 30
+python train.py -bz 128 -dp '/ssd/Datasets/ImageNet/' --dataset 'imagenet' -n 'ImageNet' -cn 1000 -e 128 --lr 0.1 --lr_min 5e-5 -wd 1e-5 --label_smooth 0.1 --model 'resnet18' --ratio 0.12 --shuffle 4 -p 200 --multiprocessing_distributed
