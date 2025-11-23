@@ -1,62 +1,71 @@
-# I2E
-This is the official pytorch implementation of paper **I2E: Real-Time Image-to-Event Conversion for High-Performance Spiking Neural Networks**.
+<div align="center">
 
-Paper Link: &emsp;
-[Arxiv](https://arxiv.org/abs/2511.08065)
+<h1>I2E: Real-Time Image-to-Event Conversion for High-Performance Spiking Neural Networks</h1>
 
-I2E is a pioneering framework that bridges the data scarcity gap in neuromorphic computing by enabling real-time, high-fidelity conversion of static images to event streams.
-This allows spiking neural networks (SNNs) to be trained on massive standard datasets like ImageNet, achieving state-of-the-art performance.
-Notably, pre-training on I2E data and transferring to the real-world CIFAR10-DVS dataset yields an unprecedented accuracy of **92.5%**, establishing a new SOTA benchmark.
-This work has been accepted for **Oral Presentation** at **AAAI 2026**.
+<!-- Badges -->
+[![Paper](https://img.shields.io/badge/Arxiv-2511.08065-B31B1B.svg?style=flat-square)](https://arxiv.org/abs/2511.08065)
+[![AAAI 2026](https://img.shields.io/badge/AAAI%202026-Oral-4b44ce.svg?style=flat-square)](https://aaai.org/)
+[![Google Scholar](https://img.shields.io/badge/Google%20Scholar-Paper-4285F4?style=flat-square&logo=google-scholar&logoColor=white)](https://scholar.google.com/scholar?cluster=1814482600796011970&as_sdt=0,45)
+[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Weights-FFD21E?style=flat-square&logo=huggingface&logoColor=black)](https://huggingface.co/Ruichen0424/I2E)
 
+</div>
 
+<br>
 
-## Abstract
+## 🚀 Introduction
+
+This is the official PyTorch implementation of the paper **I2E: Real-Time Image-to-Event Conversion for High-Performance Spiking Neural Networks**, accepted for **Oral Presentation** at **AAAI 2026**.
+
+**I2E** is a pioneering framework that bridges the data scarcity gap in neuromorphic computing.
+By simulating microsaccadic eye movements via highly parallelized convolution, I2E converts static images into high-fidelity event streams in real-time (>300x faster than prior methods).
+
+### ✨ Key Highlights
+* **SOTA Performance**: Achieves **60.50%** top-1 accuracy on Event-based ImageNet.
+* **Sim-to-Real Transfer**: Pre-training on I2E data enables **92.5%** accuracy on real-world CIFAR10-DVS, establishing a new SOTA benchmark.
+* **Real-Time Conversion**: Uniquely enables on-the-fly data augmentation for deep SNN training.
+
+## 📄 Abstract
 Spiking neural networks (SNNs) promise highly energy-efficient computing, but their adoption is hindered by a critical scarcity of event-stream data.
 This work introduces I2E, an algorithmic framework that resolves this bottleneck by converting static images into high-fidelity event streams.
 By simulating microsaccadic eye movements with a highly parallelized convolution, I2E achieves a conversion speed over 300x faster than prior methods, uniquely enabling on-the-fly data augmentation for SNN training.
 The framework's effectiveness is demonstrated on large-scale benchmarks.
-An SNN trained on the generated I2E-ImageNet dataset achieves a state-of-the-art accuracy of 60.50\%.
-Critically, this work establishes a powerful sim-to-real paradigm where pre-training on synthetic I2E data and fine-tuning on the real-world CIFAR10-DVS dataset yields an unprecedented accuracy of 92.5\%.
+An SNN trained on the generated I2E-ImageNet dataset achieves a state-of-the-art accuracy of 60.50%.
+Critically, this work establishes a powerful sim-to-real paradigm where pre-training on synthetic I2E data and fine-tuning on the real-world CIFAR10-DVS dataset yields an unprecedented accuracy of 92.5%.
 This result validates that synthetic event data can serve as a high-fidelity proxy for real sensor data, bridging a long-standing gap in neuromorphic engineering.
 By providing a scalable solution to the data problem, I2E offers a foundational toolkit for developing high-performance neuromorphic systems.
 The open-source algorithm and all generated datasets are provided to accelerate research in the field.
 
+## 👁️ Visualization
 
+Below is the visualization of the conversion process from static RGB images to dynamic event streams. We illustrate the high-fidelity conversion with four examples.
 
-## Visualization
-Here is a visualization of the conversion process from static RGB images to dynamic event streams.
-We provide four examples to illustrate the high-fidelity conversion.
+<table border="0" style="width: 100%">
+  <tr>
+    <td width="25%" align="center"><img src="./assets/original_1.jpg" alt="Original 1" style="width:100%"></td>
+    <td width="25%" align="center"><img src="./assets/converted_1.gif" alt="Converted 1" style="width:100%"></td>
+    <td width="25%" align="center"><img src="./assets/original_2.jpg" alt="Original 2" style="width:100%"></td>
+    <td width="25%" align="center"><img src="./assets/converted_2.gif" alt="Converted 2" style="width:100%"></td>
+  </tr>
+  <tr>
+    <td width="25%" align="center"><img src="./assets/original_3.jpg" alt="Original 3" style="width:100%"></td>
+    <td width="25%" align="center"><img src="./assets/converted_3.gif" alt="Converted 3" style="width:100%"></td>
+    <td width="25%" align="center"><img src="./assets/original_4.jpg" alt="Original 4" style="width:100%"></td>
+    <td width="25%" align="center"><img src="./assets/converted_4.gif" alt="Converted 4" style="width:100%"></td>
+  </tr>
+</table>
 
-<div align="center">
-<img src="./assets/original_1.jpg" width="22%" alt="Original RGB Image 1">
-<img src="./assets/converted_1.gif" width="22%" alt="Converted Event Stream 1">
-<img src="./assets/original_2.jpg" width="22%" alt="Original RGB Image 2">
-<img src="./assets/converted_2.gif" width="22%" alt="Converted Event Stream 2">
-</div>
-<div align="center">
-<img src="./assets/original_3.jpg" width="22%" alt="Original RGB Image 3">
-<img src="./assets/converted_3.gif" width="22%" alt="Converted Event Stream 3">
-<img src="./assets/original_4.jpg" width="22%" alt="Original RGB Image 4">
-<img src="./assets/converted_4.gif" width="22%" alt="Converted Event Stream 4">
-</div>
+## 📂 Datasets
 
+We provide the converted event-based datasets generated by I2E, including **I2E-CIFAR10**, **I2E-CIFAR100**, and **I2E-ImageNet**. These datasets significantly facilitate research on event-stream data by providing high-quality, large-scale benchmarks.
 
+> **Note:** We will continuously update and release I2E versions of other common static image datasets. If you have any requests, please feel free to open an issue.
 
-## Datasets
-We provide the converted event-based datasets generated by I2E, including **I2E-CIFAR10**, **I2E-CIFAR100**, and **I2E-ImageNet**.
-These datasets significantly facilitate research on event-stream data by providing high-quality, large-scale benchmarks.
-We will continuously update and release I2E versions of other common static image datasets.
-If you have any requests, please feel free to open an issue.
+**Download Links:**
 
-The datasets can be downloaded from Baidu Netdisk:
-- **Link**: [Baidu Netdisk](https://pan.baidu.com/s/1G1J6MG0d_NFQuoTxR7YLWQ?pwd=ItoE)
-- **Password**: `ItoE`
+[![Baidu Netdisk](https://img.shields.io/badge/Baidu%20Netdisk-Datasets-06A7FF?style=flat-square&logo=baidu&logoColor=white)](https://pan.baidu.com/s/1G1J6MG0d_NFQuoTxR7YLWQ?pwd=ItoE)
 
+## 🛠️ Requirements
 
-
-
-## Requirements
 - python==3.10
 - pytorch==2.2.0
 - torchvision==0.17.0
@@ -64,6 +73,7 @@ The datasets can be downloaded from Baidu Netdisk:
 - timm==1.0.19
 
 ### Environment Setup
+
 We recommend using Anaconda to create a virtual environment:
 
 ```bash
@@ -71,33 +81,22 @@ conda create -n i2e python=3.10
 conda activate i2e
 ```
 
-Install PyTorch 2.2.0 and Torchvision 0.17.0 based on your CUDA version:
+Install PyTorch and dependencies:
 
 ```bash
+# Install PyTorch (Choose based on your CUDA version)
 # CUDA 11.8
 conda install pytorch==2.2.0 torchvision==0.17.0 torchaudio==2.2.0 pytorch-cuda=11.8 -c pytorch -c nvidia
 
-# CUDA 12.1
-conda install pytorch==2.2.0 torchvision==0.17.0 torchaudio==2.2.0 pytorch-cuda=12.1 -c pytorch -c nvidia
-
-# CPU Only
-conda install pytorch==2.2.0 torchvision==0.17.0 torchaudio==2.2.0 cpuonly -c pytorch
-```
-
-Install other dependencies:
-
-```bash
+# Install SpikingJelly and timm
 pip install timm==1.0.19
-# Install SpikingJelly (ensure version is compatible, e.g., >0.0.0.0.14 and <0.0.0.1.0)
 pip install spikingjelly
 ```
 
 
-
-## Usage
+## 💻 Usage
 ### Training (Baseline-II)
-To train the models using the Baseline-II setting (with full augmentation), use the following commands.
-Please ensure you update the `--dataset_path` (or `-dp`) argument to point to your local dataset location.
+To train the models using the Baseline-II setting (with full augmentation), use the following commands. Please ensure you update the `--dataset_path` (or `-dp`) argument to point to your local dataset location.
 
 **CIFAR-10**
 ```bash
@@ -116,105 +115,105 @@ python train.py -bz 128 -dp '/path/to/ImageNet/' --dataset 'imagenet' -n 'ImageN
 
 
 
-## Pre-trained Model
+## 🤖 Pre-trained Models
 We provide pre-trained models for I2E-CIFAR and I2E-ImageNet.
-- **Link**: [Baidu Netdisk](https://pan.baidu.com/s/1IFyfL8EwtPCEcu73xmx13Q?pwd=ItoE)
-- **Password**: `ItoE`
+
+- [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Weights-FFD21E?style=flat-square&logo=huggingface&logoColor=black)](https://huggingface.co/Ruichen0424/I2E)
+- [![Baidu Netdisk](https://img.shields.io/badge/Baidu%20Netdisk-Weights-06A7FF?style=flat-square&logo=baidu&logoColor=white)](https://pan.baidu.com/s/1IFyfL8EwtPCEcu73xmx13Q?pwd=ItoE)
 
 
-
-## Main Results
+## 📊 Main Results & Model Zoo
 The experimental settings for the methods listed below are as follows:
-- **Baseline-I**: Training from scratch with minimal augmentation (random horizontal flip only).
-- **Baseline-II**: Training from scratch with full augmentation (random crop, random horizontal flip, etc.), enabled by I2E's real-time conversion.
-- **Transfer-I**: Fine-tuning on the target dataset after pre-training on a source dataset (Static ImageNet for I2E-ImageNet target; I2E-ImageNet for other targets).
-- **Transfer-II**: Fine-tuning on the target dataset after pre-training on **I2E-CIFAR10**.
+- **Baseline-I**: Training from scratch with minimal augmentation.
+- **Baseline-II**: Training from scratch with full augmentation (random crop, etc.), enabled by I2E.
+- **Transfer-I**: Fine-tuning on target dataset after pre-training on a source dataset.
+- **Transfer-II**: Fine-tuning on target dataset after pre-training on **I2E-CIFAR10**.
 
 <table>
 
 <tr>
 <th>Dataset</th>
-<th align="right">Structure</th>
+<th align="center">Structure</th>
 <th align="center">Method</th>
 <th align="center">Top-1 Acc</th>
 <th align="center">Downloadable</th>
 </tr>
 
 <tr>
-<th rowspan=3>CIFAR10-DVS</th>
-<td align="center">ResNet18</td>
+<td rowspan=3 align="center"><strong>CIFAR10-DVS</strong></td>
+<td align="center">MS-ResNet18</td>
 <td align="center">Baseline</td>
 <td align="center">65.6%</td>
 <td align="center">&#x2714;</td>
 </tr>
 <tr>
-<td align="center">ResNet18</td>
+<td align="center">MS-ResNet18</td>
 <td align="center">Transfer-I</td>
 <td align="center">83.1%</td>
 <td align="center">&#x2714;</td>
 </tr>
 <tr>
-<td align="center">ResNet18</td>
+<td align="center">MS-ResNet18</td>
 <td align="center">Transfer-II</td>
-<td align="center">92.5%</td>
+<td align="center"><strong>92.5%</strong></td>
 <td align="center">&#x2714;</td>
 </tr>
 
 <tr>
-<th rowspan=3>I2E-CIFAR10</th>
-<td align="center">ResNet18</td>
+<td rowspan=3 align="center"><strong>I2E-CIFAR10</strong></td>
+<td align="center">MS-ResNet18</td>
 <td align="center">Baseline-I</td>
 <td align="center">85.07%</td>
 <td align="center">&#x2714;</td>
 </tr>
 <tr>
-<td align="center">ResNet18</td>
+<td align="center">MS-ResNet18</td>
 <td align="center">Baseline-II</td>
 <td align="center">89.23%</td>
 <td align="center">&#x2714;</td>
 </tr>
 <tr>
-<td align="center">ResNet18</td>
+<td align="center">MS-ResNet18</td>
 <td align="center">Transfer-I</td>
-<td align="center">90.86%</td>
+<td align="center"><strong>90.86%</strong></td>
 <td align="center">&#x2714;</td>
 </tr>
 
 <tr>
-<th rowspan=3>I2E-CIFAR100</th>
-<td align="center">ResNet18</td>
+<td rowspan=3 align="center"><strong>I2E-CIFAR100</strong></td>
+<td align="center">MS-ResNet18</td>
 <td align="center">Baseline-I</td>
 <td align="center">51.32%</td>
 <td align="center">&#x2714;</td>
 </tr>
 <tr>
-<td align="center">ResNet18</td>
+<td align="center">MS-ResNet18</td>
 <td align="center">Baseline-II</td>
 <td align="center">60.68%</td>
 <td align="center">&#x2714;</td>
 </tr>
 <tr>
-<td align="center">ResNet18</td>
+<td align="center">MS-ResNet18</td>
 <td align="center">Transfer-I</td>
-<td align="center">64.53%</td>
+<td align="center"><strong>64.53%</strong></td>
 <td align="center">&#x2714;</td>
 </tr>
 
 <tr>
-<th rowspan=4>I2E-ImageNet</th>
-<td align="center">ResNet18</td>
+<td rowspan=4 align="center"><strong>I2E-ImageNet</strong></td>
+<td align="center">MS-ResNet18</td>
 <td align="center">Baseline-I</td>
 <td align="center">48.30%</td>
 <td align="center">&#x2714;</td>
 </tr>
 <tr>
-<td align="center">ResNet18</td>
+<td align="center">MS-ResNet18</td>
 <td align="center">Baseline-II</td>
 <td align="center">57.97%</td>
 <td align="center">&#x2714;</td>
 </tr>
 <tr>
-<td align="center">ResNet18</td>
+<td align="center">MS-ResNet18</td>
 <td align="center">Transfer-I</td>
 <td align="center">59.28%</td>
 <td align="center">&#x2714;</td>
@@ -222,16 +221,16 @@ The experimental settings for the methods listed below are as follows:
 <tr>
 <td align="center">MS-ResNet34</td>
 <td align="center">Baseline-II</td>
-<td align="center">60.50%</td>
+<td align="center"><strong>60.50%</strong></td>
 <td align="center">&#x2714;</td>
 </tr>
 
 </table>
 
-## Citation
+## 📜 Citation
 If you find our code useful for your research, or use the I2E algorithm, or use the provided I2E-Datasets, please consider citing:
 
-```
+```bibtex
 @article{ma2025i2e,
   title={I2E: Real-Time Image-to-Event Conversion for High-Performance Spiking Neural Networks},
   author={Ma, Ruichen and Meng, Liwei and Qiao, Guanchao and Ning, Ning and Liu, Yang and Hu, Shaogang},
