@@ -5,7 +5,7 @@
 <!-- Badges -->
 [![Paper](https://img.shields.io/badge/Arxiv-2511.08065-B31B1B.svg?style=flat-square)](https://arxiv.org/abs/2511.08065)
 [![AAAI 2026](https://img.shields.io/badge/AAAI%202026-Oral-4b44ce.svg?style=flat-square)](https://aaai.org/)
-[![Google Scholar](https://img.shields.io/badge/Google%20Scholar-Paper-4285F4?style=flat-square&logo=google-scholar&logoColor=white)](https://scholar.google.com/scholar?cluster=1814482600796011970&as_sdt=0,45)
+[![Google Scholar](https://img.shields.io/badge/Google%20Scholar-Paper-4285F4?style=flat-square&logo=google-scholar&logoColor=white)](https://scholar.google.com/scholar?cluster=1814482600796011970)
 [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Models-FFD21E?style=flat-square&logo=huggingface&logoColor=black)](https://huggingface.co/Ruichen0424/I2E)
 
 </div>
