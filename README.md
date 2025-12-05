@@ -6,7 +6,10 @@
 [![Paper](https://img.shields.io/badge/Arxiv-2511.08065-B31B1B.svg?style=flat-square)](https://arxiv.org/abs/2511.08065)
 [![AAAI 2026](https://img.shields.io/badge/AAAI%202026-Oral-4b44ce.svg?style=flat-square)](https://aaai.org/)
 [![Google Scholar](https://img.shields.io/badge/Google%20Scholar-Paper-4285F4?style=flat-square&logo=google-scholar&logoColor=white)](https://scholar.google.com/scholar?cluster=1814482600796011970)
+
+[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Paper-FFD21E?style=flat-square&logo=huggingface&logoColor=black)](https://huggingface.co/papers/2511.08065)
 [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Models-FFD21E?style=flat-square&logo=huggingface&logoColor=black)](https://huggingface.co/Ruichen0424/I2E)
+[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Datasets-FFD21E?style=flat-square&logo=huggingface&logoColor=black)](https://huggingface.co/datasets/UESTC-BICS/I2E)
 
 </div>
 
@@ -39,6 +42,8 @@ The open-source algorithm and all generated datasets are provided to accelerate 
 
 Below is the visualization of the conversion process from static RGB images to dynamic event streams. We illustrate the high-fidelity conversion with four examples.
 
+More than 200 additional visualization comparisons can be found in [Visualization.md](./Visualization.md).
+
 <table border="0" style="width: 100%">
   <tr>
     <td width="25%" align="center"><img src="./assets/original_1.jpg" alt="Original 1" style="width:100%"></td>
@@ -65,7 +70,16 @@ This folder contains the generation code for all I2E datasets.
 
 **Download Links:**
 
-[![Baidu Netdisk](https://img.shields.io/badge/Baidu%20Netdisk-Datasets-06A7FF?style=flat-square&logo=baidu&logoColor=white)](https://pan.baidu.com/s/1G1J6MG0d_NFQuoTxR7YLWQ?pwd=ItoE)
+ - [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Datasets-FFD21E?style=flat-square&logo=huggingface&logoColor=black)](https://huggingface.co/datasets/UESTC-BICS/I2E)
+
+ - [![Baidu Netdisk](https://img.shields.io/badge/Baidu%20Netdisk-Datasets-06A7FF?style=flat-square&logo=baidu&logoColor=white)](https://pan.baidu.com/s/1G1J6MG0d_NFQuoTxR7YLWQ?pwd=ItoE)
+
+We also provide MD5 checksums to facilitate verification.
+Use the following command to verify the compressed files:
+
+```bash
+md5sum -c md5.txt
+```
 
 ## 🛠️ Requirements
 
