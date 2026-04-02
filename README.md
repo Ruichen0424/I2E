@@ -368,11 +368,14 @@ The experimental settings for the methods listed below are as follows:
 If you find our code useful for your research, or use the I2E algorithm, or use the provided I2E-Datasets, please consider citing:
 
 ```bibtex
-@article{ma2025i2e,
+@inproceedings{ma2026i2e,
   title={I2E: Real-Time Image-to-Event Conversion for High-Performance Spiking Neural Networks},
   author={Ma, Ruichen and Meng, Liwei and Qiao, Guanchao and Ning, Ning and Liu, Yang and Hu, Shaogang},
-  journal={arXiv preprint arXiv:2511.08065},
-  year={2025}
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={40},
+  number={3},
+  pages={1982--1990},
+  year={2026}
 }
 ```
 
