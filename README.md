@@ -10,6 +10,7 @@
 [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Paper-FFD21E?style=flat-square&logo=huggingface&logoColor=black)](https://huggingface.co/papers/2511.08065)
 [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Models-FFD21E?style=flat-square&logo=huggingface&logoColor=black)](https://huggingface.co/Ruichen0424/I2E)
 [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Datasets-FFD21E?style=flat-square&logo=huggingface&logoColor=black)](https://huggingface.co/datasets/UESTC-BICS/I2E)
+![hits](https://gitviews.com/repo/ruichen0424/I2E.svg?style=flat&label=Hits&color=%234f46e5&label-color=%23334155)
 
 [![YouTube](https://img.shields.io/badge/YouTube-Video-FF0000?style=flat-square&logo=youtube&logoColor=white)](https://youtu.be/v9z0pn8kTsI?si=dkbjR6AV_RgCU3wA)
 [![Bilibili](https://img.shields.io/badge/Bilibili-Video-FE7398?style=flat-square&logo=bilibili&logoColor=white)](https://www.bilibili.com/video/BV14XrfBjENb/)
